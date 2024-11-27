@@ -31,7 +31,7 @@ public class Prueba {
             scanner.nextLine();
 
             switch (opcion) {
-                case 1: // para crear un garaje
+                case 1: 
                     try {
                         System.out.println("Ingrese los datos del nuevo garaje:");
                         System.out.print("Departamento: ");
@@ -57,7 +57,7 @@ public class Prueba {
                     }
                     break;
 
-                case 2: // para borrar un garaje
+                case 2: 
                     try {
                         System.out.print("Ingrese la dirección del garaje a eliminar: ");
                         String direccionEliminar = scanner.nextLine();
@@ -74,7 +74,7 @@ public class Prueba {
                     }
                     break;
 
-                case 3: // para mostrar informacion del garaje
+                case 3: 
                     System.out.print("Ingrese la dirección del garaje a actualizar: ");
                     String direccionActualizar = scanner.nextLine();
                     Garaje garajeActualizar = red.buscarGaraje(direccionActualizar);
@@ -98,7 +98,7 @@ public class Prueba {
                     }
                     break;
 
-                case 4: // ingresar un vehiculo a algun garaje
+                case 4: 
                     try {
                         System.out.print("Ingrese la dirección del garaje: ");
                         String direccionGaraje = scanner.nextLine();
@@ -144,7 +144,7 @@ public class Prueba {
                     }
                     break;
 
-                case 5: // para retirar un vehiculo de algun garaje
+                case 5: 
                     try {
                         System.out.print("Ingrese la dirección del garaje: ");
                         String direccionGarajeRetirar = scanner.nextLine();
@@ -164,7 +164,7 @@ public class Prueba {
                     }
                     break;
 
-                case 6: // para generar los informes
+                case 6: 
                     System.out.println("1. Ocupación de todos los garajes");
                     System.out.println("2. Ocupación de un tipo de vehículo");
                     System.out.println("3. Recaudo mensual por garaje y total");
@@ -181,7 +181,7 @@ public class Prueba {
                     }
                     break;
 
-                case 7: // salir o acabarlo
+                case 7: 
                     System.out.println("Saliendo del programa.");
                     break;
 
