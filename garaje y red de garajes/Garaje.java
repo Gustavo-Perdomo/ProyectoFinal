@@ -21,7 +21,7 @@ public class Garaje {
     private int numeroEspacios;
     private ArrayList<Vehiculo> espacios;
 
-    // Constructores
+    
     public Garaje(String departamento, String ciudad, String direccion, String telefono, String email, String nombreAdministrador, int numeroEspacios) {
         this.departamento = departamento;
         this.ciudad = ciudad;
@@ -33,7 +33,7 @@ public class Garaje {
         this.espacios = new ArrayList<>(numeroEspacios);
     }
 
-    // Getters y setters
+    
     public String getDepartamento() {
         return departamento;
     }
@@ -70,7 +70,7 @@ public class Garaje {
         this.email = email;
     }
 
-    // Métodos para validar los tipos de vehículos
+    
     public boolean validarIngresoCamion(Camion camion) throws ExcepcionGaraje {
         int maxCamiones = numeroEspacios < 100 ? 10 : 20;
         int camionesRegistrados = 0;
@@ -103,7 +103,7 @@ public class Garaje {
         return true;
     }
 
-    // Métodos para calcular ingresos
+    
     public double calcularIngresos() {
         double totalIngresos = 0;
         for (Vehiculo vehiculo : espacios) {
@@ -114,17 +114,17 @@ public class Garaje {
         return totalIngresos;
     }
 
-    // Método para buscar un vehículo por matrícula
+   
     public Vehiculo buscarVehiculo(String placa) {
         for (Vehiculo vehiculo : espacios) {
             if (vehiculo != null && vehiculo.getPlaca().equalsIgnoreCase(placa)) {
                 return vehiculo;
             }
         }
-        return null; // Si no se encuentra la matrícula
+        return null; 
     }
 
-    // Método para calcular la ocupación del garaje
+   
     public int calcularOcupacion() {
         int ocupados = 0;
         for (Vehiculo vehiculo : espacios) {
@@ -135,7 +135,7 @@ public class Garaje {
         return ocupados;
     }
 
-    // Método para agregar un vehículo a un garaje
+    
     public void agregarVehiculo(Vehiculo vehiculo) throws ExcepcionGaraje {
         if (vehiculo == null) {
             throw new ExcepcionGaraje("El vehículo no puede ser nulo.");
@@ -144,7 +144,7 @@ public class Garaje {
             throw new ExcepcionGaraje("No hay espacios disponibles en este garaje.");
         }
         
-        // Validar según tipo de vehículo
+       
         if (vehiculo instanceof Camion) {
             validarIngresoCamion((Camion) vehiculo);
         } else if (vehiculo instanceof Moto) {
@@ -154,7 +154,7 @@ public class Garaje {
         espacios.add(vehiculo);
     }
 
-    // Método para retirar un vehículo
+    
     public void retirarVehiculo(String placa) throws ExcepcionGaraje {
         Vehiculo vehiculo = buscarVehiculo(placa);
         if (vehiculo == null) {
